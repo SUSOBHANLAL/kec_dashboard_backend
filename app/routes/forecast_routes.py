@@ -57,7 +57,7 @@
 
 from flask import Blueprint, request, jsonify
 import pandas as pd
-
+from flask_cors import cross_origin
 from app.config import CSV_FILES
 from app.services.data_service import process_data
 from app.models.forecasting import run_arima, run_rf
