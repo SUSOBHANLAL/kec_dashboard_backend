@@ -1,0 +1,20 @@
+project/
+│
+├── app/
+│   ├── __init__.py
+│   ├── routes/
+│   │   └── forecast_routes.py
+│   │
+│   ├── models/
+│   │   └── forecasting.py
+│   │
+│   ├── services/
+│   │   └── data_service.py
+│   │
+│   ├── utils/
+│   │   └── metrics.py
+│   │
+│   └── config.py
+│
+├── run.py
+└── requirements.txt
