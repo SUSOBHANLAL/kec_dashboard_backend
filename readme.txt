@@ -25,3 +25,7 @@ project/
 
 API NAME 
 http://127.0.0.1:5000/api/v1/forecast?ticker=TCS&model=arima
+
+
+
+http://localhost:5000/api/v1/predict-model?ticker=HLL

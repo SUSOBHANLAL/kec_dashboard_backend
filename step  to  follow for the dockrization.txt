@@ -1,0 +1,54 @@
+STEP 0: Go to your project folder
+
+Open terminal inside your project:
+cd path/to/your/project
+
+
+
+STEP 1: Create Dockerfile
+
+In your project root, create a file named Dockerfile and paste:
+
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+ENV PYTHONPATH=/app
+
+EXPOSE 5000
+
+CMD ["python", "run.py"]
+
+
+
+
+🚫 STEP 2: Create .dockerignore
+
+Create file .dockerignore:
+
+__pycache__/
+*.pyc
+.env
+venv/
+.git
+
+
+
+
+📦 STEP 4: Build Docker Image
+
+Run this command:
+
+docker build -t flask-api .
+
+
+▶️ STEP 5: Run Container
+docker run -p 5000:5000 flask-api
+
+

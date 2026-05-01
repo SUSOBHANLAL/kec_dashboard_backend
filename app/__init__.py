@@ -59,6 +59,9 @@ from flask import Flask
 from flask_cors import CORS
 
 from app.routes.forecast_routes import forecast_bp
+from app.routes.predict_routes import predict_bp
+from app.routes.indicator_routes import indicator_bp
+
 
 def create_app():
     app = Flask(__name__)
@@ -68,6 +71,9 @@ def create_app():
 
     # Register Blueprints
     app.register_blueprint(forecast_bp, url_prefix="/api/v1")
+
+    app.register_blueprint(predict_bp, url_prefix="/api/v1")
+    app.register_blueprint(indicator_bp, url_prefix="/api/v1")
 
     @app.route("/")
     def home():
